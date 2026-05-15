@@ -73,7 +73,7 @@ public class TimerPanel extends JPanel {
 		frame.add(votePanel);
 		//レイアウトの指定と計算
 		frame.revalidate();
-		frame.setSize(600, 690);
+		frame.setSize(600, 400);
 		frame.setLocationRelativeTo(null);
 		frame.repaint();
 	}
