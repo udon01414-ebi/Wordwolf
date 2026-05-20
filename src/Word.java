@@ -75,57 +75,70 @@ public class Word extends JPanel {
 		if (od[genreInt].equals("食べ物")) {
 			String odai0[] = { "みかん", "ぽんかん", "りんご","なし","うどん","そば","ラーメン","冷やし中華","スパゲティー","カルボナーラ",
 					"ぶどう","マスカット","チャーハン","エビピラフ","たこ焼き","お好み焼き","ハンバーグ","ステーキ","ラムネ","サイダー","ビール", "ワイン"};
-			String od0[] = {odai0[rand.nextInt(odai0.length / 2) * 2], odai0[rand.nextInt(odai0.length / 2) * 2 + 1]};
+			int a = rand.nextInt(odai0.length / 2) * 2;
+			String od0[] = {odai0[a], odai0[a + 1]};
 			wordManager(od0);
 		} else if (od[genreInt].equals("施設・店")) {
 			String odai1[] = { "美術館", "博物館","学校","病院","遊園地","ゲームセンター","動物園", "水族館","温泉","サウナ","両国国技館","日本武道館",
 					"ドン・キホーテ","業務スーパー","マックスバリュー", "まいばすけっと","スターバックス","ドトール","ユニクロ","GU","羽田空港","成田空港",
 					"ディズニーランド", "サンリオピューロランド","ひらかたパーク", "ユニバーサルスタジオジャパン" };		
-			String od1[] = {odai1[rand.nextInt(odai1.length / 2) * 2], odai1[rand.nextInt(odai1.length / 2) * 2 + 1]};
+			int a = rand.nextInt(odai1.length / 2) * 2;
+			String od1[] = {odai1[a], odai1[a + 1]};
 			wordManager(od1);
 		} else if (od[genreInt].equals("スポーツ")) {
 			String odai2[] = { "サッカー", "ハンドボール","野球","クリケット" };
-			String od2[] = {odai2[rand.nextInt(odai2.length / 2) * 2], odai2[rand.nextInt(odai2.length / 2) * 2 + 1]};
+			int a = rand.nextInt(odai2.length / 2) * 2;
+			String od2[] = {odai2[a], odai2[a + 1]};
 			wordManager(od2);
 		} else if (od[genreInt].equals("日本の地名")) {
 			String odai3[] = { "新宿", "渋谷" };
-			String od3[] = {odai3[rand.nextInt(odai3.length / 2) * 2], odai3[rand.nextInt(odai3.length / 2) * 2 + 1]};
+			int a = rand.nextInt(odai3.length / 2) * 2;
+			String od3[] = {odai3[a], odai3[a + 1]};
 			wordManager(od3);
 		} else if (od[genreInt].equals("世界の国")) {
 			String odai4[] = { "フランス", "イタリア" };
-			String od4[] = {odai4[rand.nextInt(odai4.length / 2) * 2], odai4[rand.nextInt(odai4.length / 2) * 2 + 1]};
+			int a = rand.nextInt(odai4.length / 2) * 2;
+			String od4[] = {odai4[a], odai4[a + 1]};
 			wordManager(od4);
 		} else if (od[genreInt].equals("動物")) {
 			String odai5[] = { "タイガー", "ジャガー" };
-			String od5[] = {odai5[rand.nextInt(odai5.length / 2) * 2], odai5[rand.nextInt(odai5.length / 2) * 2 + 1]};
+			int a = rand.nextInt(odai5.length / 2) * 2;
+			String od5[] = {odai5[a * 2], odai5[a + 1]};
 			wordManager(od5);
 		} else if (od[genreInt].equals("人物")) {
 			String odai6[] = { "Aさん", "Bさん" };
-			String od6[] = {odai6[rand.nextInt(odai6.length / 2) * 2], odai6[rand.nextInt(odai6.length / 2) * 2 + 1]};
+			int a = rand.nextInt(odai6.length / 2) * 2;
+			String od6[] = {odai6[a], odai6[a + 1]};
 			wordManager(od6);
 		} else if (od[genreInt].equals("ゲーム")) {
 			String odai7[] = { "メガドライブ", "セガサターン" };
-			String od7[] = {odai7[rand.nextInt(odai7.length / 2) * 2], odai7[rand.nextInt(odai7.length / 2) * 2 + 1]};
+			int a = rand.nextInt(odai7.length / 2) * 2;
+			String od7[] = {odai7[a], odai7[a + 1]};
 			wordManager(od7);
 		} else if (od[genreInt].equals("漫画・アニメ")) {
 			String odai8[] = { "アニメ1", "アニメ2" };
-			String od8[] = {odai8[rand.nextInt(odai8.length / 2) * 2], odai8[rand.nextInt(odai8.length / 2) * 2 + 1]};
+			int a = rand.nextInt(odai8.length / 2) * 2;
+			String od8[] = {odai8[a], odai8[a + 1]};
 			wordManager(od8);
 		} else if (od[genreInt].equals("キャラクター")) {
 			String odai9[] = { "ファイン", "レイン" };
-			String od9[] = {odai9[rand.nextInt(odai9.length / 2) * 2], odai9[rand.nextInt(odai9.length / 2) * 2 + 1]};
+			int a = rand.nextInt(odai9.length / 2) * 2;
+			String od9[] = {odai9[a], odai9[a + 1]};
 			wordManager(od9);
 		} else if (od[genreInt].equals("職業")) {
 			String odai10[] = { "プログラマー", "システムエンジニア" };
-			String od10[] = {odai10[rand.nextInt(odai10.length / 2) * 2], odai10[rand.nextInt(odai10.length / 2) * 2 + 1]};
+			int a = rand.nextInt(odai10.length / 2) * 2;
+			String od10[] = {odai10[a], odai10[a + 1]};
 			wordManager(od10);
 		} else if (od[genreInt].equals("IT用語")) {
 			String odai11[] = { "ウォーターフォールモデル", "スパイラルモデル" };
-			String od11[] = {odai11[rand.nextInt(odai11.length / 2) * 2], odai11[rand.nextInt(odai11.length / 2) * 2 + 1]};
+			int a = rand.nextInt(odai11.length / 2) * 2;
+			String od11[] = {odai11[a], odai11[a + 1]};
 			wordManager(od11);
 		} else if (od[genreInt].equals("その他")) {
 			String odai12[] = { "a", "b" };
-			String od12[] = {odai12[rand.nextInt(odai12.length / 2) * 2], odai12[rand.nextInt(odai12.length / 2) * 2 + 1]};
+			int a = rand.nextInt(odai12.length / 2) * 2;
+			String od12[] = {odai12[a], odai12[a + 1]};
 			wordManager(od12);
 		}
 	}
