@@ -17,13 +17,14 @@ public class Word extends JPanel {
 	int genreInt;
 	JTextField genre;
 	static public int wolfPlayer;
+	Random rand = new Random();
 
 	public Word() {
 		String input = JOptionPane.showInputDialog("<html>お題のジャンルを選択します。この中から選んでください。<br>"
 				+ "0:食べ物、1:施設、2:スポーツ、3:日本の地名<br>"
 				+ "4:世界の国、5:動物、6:人物、7:ゲーム<br>"
 				+ "8:漫画・アニメ、9:キャラクター、10:職業<br>"
-				+ "11:IT用語、12その他、13:ランダム");
+				+ "11:IT用語、12その他");
 
 		while (true) {
 			if (input == null) {
@@ -71,54 +72,63 @@ public class Word extends JPanel {
 	}
 
 	private void genreManager(int genreInt) {
-
 		if (od[genreInt].equals("食べ物")) {
-			String od0[] = { "みかん", "ぽんかん" };
+			String odai0[] = { "みかん", "ぽんかん" };
+			String od0[] = {odai0[rand.nextInt(odai0.length / 2) * 2], odai0[rand.nextInt(odai0.length / 2) * 2 + 1]};
 			wordManager(od0);
-		}
-
-		else if (od[genreInt].equals("施設")) {
-			String od1[] = { "美術館", "博物館" };
+		} else if (od[genreInt].equals("施設")) {
+			String odai1[] = { "美術館", "博物館" };
+			String od1[] = {odai1[rand.nextInt(odai1.length / 2) * 2], odai1[rand.nextInt(odai1.length / 2) * 2 + 1]};
 			wordManager(od1);
 		} else if (od[genreInt].equals("スポーツ")) {
-			String od2[] = { "サッカー", "ハンドボール" };
+			String odai2[] = { "サッカー", "ハンドボール" };
+			String od2[] = {odai2[rand.nextInt(odai2.length / 2) * 2], odai2[rand.nextInt(odai2.length / 2) * 2 + 1]};
 			wordManager(od2);
 		} else if (od[genreInt].equals("日本の地名")) {
-			String od3[] = { "新宿", "渋谷" };
+			String odai3[] = { "新宿", "渋谷" };
+			String od3[] = {odai3[rand.nextInt(odai3.length / 2) * 2], odai3[rand.nextInt(odai3.length / 2) * 2 + 1]};
 			wordManager(od3);
 		} else if (od[genreInt].equals("世界の国")) {
-			String od4[] = { "フランス", "イタリア" };
+			String odai4[] = { "フランス", "イタリア" };
+			String od4[] = {odai4[rand.nextInt(odai4.length / 2) * 2], odai4[rand.nextInt(odai4.length / 2) * 2 + 1]};
 			wordManager(od4);
 		} else if (od[genreInt].equals("動物")) {
-			String od5[] = { "タイガー", "ジャガー" };
+			String odai5[] = { "タイガー", "ジャガー" };
+			String od5[] = {odai5[rand.nextInt(odai5.length / 2) * 2], odai5[rand.nextInt(odai5.length / 2) * 2 + 1]};
 			wordManager(od5);
 		} else if (od[genreInt].equals("人物")) {
-			String od6[] = { "Aさん", "Bさん" };
+			String odai6[] = { "Aさん", "Bさん" };
+			String od6[] = {odai6[rand.nextInt(odai6.length / 2) * 2], odai6[rand.nextInt(odai6.length / 2) * 2 + 1]};
 			wordManager(od6);
 		} else if (od[genreInt].equals("ゲーム")) {
-			String od7[] = { "メガドライブ", "セガサターン" };
+			String odai7[] = { "メガドライブ", "セガサターン" };
+			String od7[] = {odai7[rand.nextInt(odai7.length / 2) * 2], odai7[rand.nextInt(odai7.length / 2) * 2 + 1]};
 			wordManager(od7);
 		} else if (od[genreInt].equals("漫画・アニメ")) {
-			String od8[] = { "アニメ1", "アニメ2" };
+			String odai8[] = { "アニメ1", "アニメ2" };
+			String od8[] = {odai8[rand.nextInt(odai8.length / 2) * 2], odai8[rand.nextInt(odai8.length / 2) * 2 + 1]};
 			wordManager(od8);
 		} else if (od[genreInt].equals("キャラクター")) {
-			String od9[] = { "ファイン", "レイン" };
+			String odai9[] = { "ファイン", "レイン" };
+			String od9[] = {odai9[rand.nextInt(odai9.length / 2) * 2], odai9[rand.nextInt(odai9.length / 2) * 2 + 1]};
 			wordManager(od9);
 		} else if (od[genreInt].equals("職業")) {
-			String od10[] = { "プログラマー", "システムエンジニア" };
+			String odai10[] = { "プログラマー", "システムエンジニア" };
+			String od10[] = {odai10[rand.nextInt(odai10.length / 2) * 2], odai10[rand.nextInt(odai10.length / 2) * 2 + 1]};
 			wordManager(od10);
 		} else if (od[genreInt].equals("IT用語")) {
-			String od11[] = { "ウォーターフォールモデル", "スパイラルモデル" };
+			String odai11[] = { "ウォーターフォールモデル", "スパイラルモデル" };
+			String od11[] = {odai11[rand.nextInt(odai11.length / 2) * 2], odai11[rand.nextInt(odai11.length / 2) * 2 + 1]};
 			wordManager(od11);
 		} else if (od[genreInt].equals("その他")) {
-			String od12[] = { "a", "b" };
+			String odkai12[] = { "a", "b" };
+			String od12[] = {odai12[rand.nextInt(odai12.length / 2) * 2], odai12[rand.nextInt(odai12.length / 2) * 2 + 1]};
 			wordManager(od12);
 		}
 	}
 
 	private void wordManager(String[] od) {
-		Random rand = new Random();
-		int mainIndex = rand.nextInt(od.length);
+		int mainIndex = rand.nextInt(2);
 		int wolfIndex = 1 - mainIndex;
 
 		wolfPlayer = rand.nextInt(User.memberCount) + 1;
