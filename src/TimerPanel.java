@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Font;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -8,8 +9,8 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 public class TimerPanel extends JPanel {
-	int timeS = 3; //タイマーの秒数管理
-	int timeM = 0; //タイマーの分数管理
+	static public int timeS = 3; //タイマーの秒数管理
+	static public int timeM = 0; //タイマーの分数管理
 	//タイマーのラベル
 	JLabel timeLabel = new JLabel(timeM + ":" + (timeS < 10 ? "0" + timeS : timeS));
 
@@ -23,8 +24,10 @@ public class TimerPanel extends JPanel {
 	//コンストラクタ
 	public TimerPanel() {
 		//タイマーのフォントサイズ変更
-		timeLabel.setFont(new Font("MS ゴシック", Font.PLAIN, 50));
-
+		timeLabel.setFont(new Font("Serif", Font.BOLD, 50));
+		timeLabel.setForeground(new Color(150, 0, 0));
+		//タイマーの背景色変更
+		this.setBackground(Color.black);
 		//タイマーのラベルを画面に追加
 		add(timeLabel);
 

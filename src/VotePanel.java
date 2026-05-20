@@ -1,4 +1,6 @@
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
@@ -18,8 +20,13 @@ public class VotePanel extends JPanel {
 
 	//コンストラクタ
 	public VotePanel() {
+		for (int i = 0; i < 10; i++) {
+			//ラベルのフォントサイズ変更
+		}
+		//パネルの背景色を変更
+		this.setBackground(Color.black);
 		//プレイヤー名を取得
-		this.playerNames = TestVotePanel.playerNames;
+		this.playerNames = User.playerNames;
 		//レイアウト決定(列数を4列に)
 		setLayout(new GridLayout(0, 4));
 		//プレイヤー数だけ繰り返して要素をパネルに追加していく
@@ -29,23 +36,33 @@ public class VotePanel extends JPanel {
 			
 			//プレイヤー名追加
 			playerLabels[i] = new JLabel(playerNames[i]);
+			playerLabels[i].setFont(new Font("Serif", Font.BOLD, 20));
+			playerLabels[i].setForeground(new Color(150, 0, 0));
 			add(playerLabels[i]);
 			playerLabels[i].setHorizontalAlignment(JLabel.CENTER);
 
 			//投票数追加
 			voteAmountLabels[i] = new JLabel("現在" + voteAmounts[i] + "票");
+			voteAmountLabels[i].setFont(new Font("Serif", Font.BOLD, 20));
+			voteAmountLabels[i].setForeground(new Color(150, 0, 0));
 			add(voteAmountLabels[i]);
 			voteAmountLabels[i].setHorizontalAlignment(JLabel.CENTER);
 			
 			//投票ボタン追加
 			voteButtons[i] = new JButton("投票");
 			voteButtons[i].setPreferredSize(new Dimension(100, 50));
+			voteButtons[i].setFont(new Font("Serif", Font.BOLD, 15));
+			voteButtons[i].setBackground(Color.black);
+			voteButtons[i].setForeground(new Color(150, 0, 0));
 			add(voteButtons[i]);
 			voteButtons[i].addActionListener(e -> voteActionListener(voteButtons[ii], ii));
 
 			//取消ボタン追加
 			cancelButtons[i] = new JButton("投票取消");
 			cancelButtons[i].setPreferredSize(new Dimension(100, 50));
+			cancelButtons[i].setFont(new Font("Serif", Font.BOLD, 15));
+			cancelButtons[i].setBackground(Color.black);
+			cancelButtons[i].setForeground(new Color(150, 0, 0));
 			add(cancelButtons[i]);
 			cancelButtons[i].addActionListener(e -> cancelActionListener(cancelButtons[ii], ii));
 		}
