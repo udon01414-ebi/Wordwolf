@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 public class TimerPanel extends JPanel {
-	int timeS = 10; //タイマーの秒数管理
+	int timeS = 3; //タイマーの秒数管理
 	int timeM = 0; //タイマーの分数管理
 	//タイマーのラベル
 	JLabel timeLabel = new JLabel(timeM + ":" + (timeS < 10 ? "0" + timeS : timeS));
@@ -73,7 +73,7 @@ public class TimerPanel extends JPanel {
 		frame.add(votePanel);
 		//レイアウトの指定と計算
 		frame.revalidate();
-		frame.setSize(600, 400);
+		frame.pack();
 		frame.setLocationRelativeTo(null);
 		frame.repaint();
 	}
