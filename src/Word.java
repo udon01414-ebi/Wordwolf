@@ -44,12 +44,8 @@ public class Word extends JPanel {
 				} else {
 					genreCheck(count);
 					
-					JOptionPane.showConfirmDialog(
-							null,
-							"ゲームを開始しますか？（議論時間は" + TimerPanel.timeM + "分" + TimerPanel.timeS + "秒" + "です。）",
-							"確認",
-							JOptionPane.OK_OPTION);
-					
+					JOptionPane.showMessageDialog(null, "ゲームを開始しますか？（議論時間は" + TimerPanel.timeM + "分" + TimerPanel.timeS + "秒" + "です。）");
+
 					TimerPanel timerPanel = new TimerPanel();
 					JFrame frame = new JFrame("ワードウルフ");
 					timerPanel.setBorder(new EmptyBorder(50,0,50,0));
@@ -64,7 +60,6 @@ public class Word extends JPanel {
 
 			} catch (NumberFormatException e) {
 				JOptionPane.showMessageDialog(null, "数字を入力してください");
-				continue;
 			}
 		}
 	}
@@ -137,11 +132,7 @@ public class Word extends JPanel {
 			if (choice == 0) {
 				String odai = (i == wolfPlayer ? od[wolfIndex] : od[mainIndex]);
 
-				JOptionPane.showConfirmDialog(
-						null,
-						"あなたのお題は：" + odai + " です。" + "\n確認しましたか？",
-						"確認",
-						JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(null, "あなたのお題は：" + odai + " です。" + "\n確認しましたか？");
 				i++;
 			}
 

@@ -71,6 +71,9 @@ public class VotePanel extends JPanel {
 		add(new JLabel(""));
 		add(new JLabel(""));
 		completeButton.setEnabled(false);	//初期状態は無効
+		completeButton.setFont(new Font("Serif", Font.BOLD, 15));
+		completeButton.setBackground(Color.black);
+		completeButton.setForeground(new Color(150, 0, 0));
 		add(completeButton);
 		completeButton.addActionListener(e -> completeActionListener(completeButton));
 	}
