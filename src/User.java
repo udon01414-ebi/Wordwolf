@@ -13,7 +13,7 @@ public class User {
 		UIManager.put("OptionPane.messageForeground", Color.red);
 		UIManager.put("Button.background", Color.darkGray);
 		UIManager.put("Button.foreground", Color.white);
-		UIManager.put("OptionPane.messageForeground", new Color(150, 0, 0));
+		UIManager.put("OptionPane.messageForeground", new Color(200, 0, 0));
 	}
 
 	static public int memberCount;

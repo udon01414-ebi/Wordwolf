@@ -37,14 +37,14 @@ public class VotePanel extends JPanel {
 			//プレイヤー名追加
 			playerLabels[i] = new JLabel(playerNames[i]);
 			playerLabels[i].setFont(new Font("Serif", Font.BOLD, 20));
-			playerLabels[i].setForeground(new Color(150, 0, 0));
+			playerLabels[i].setForeground(new Color(200, 0, 0));
 			add(playerLabels[i]);
 			playerLabels[i].setHorizontalAlignment(JLabel.CENTER);
 
 			//投票数追加
 			voteAmountLabels[i] = new JLabel("現在" + voteAmounts[i] + "票");
 			voteAmountLabels[i].setFont(new Font("Serif", Font.BOLD, 20));
-			voteAmountLabels[i].setForeground(new Color(150, 0, 0));
+			voteAmountLabels[i].setForeground(new Color(200, 0, 0));
 			add(voteAmountLabels[i]);
 			voteAmountLabels[i].setHorizontalAlignment(JLabel.CENTER);
 			
@@ -53,7 +53,7 @@ public class VotePanel extends JPanel {
 			voteButtons[i].setPreferredSize(new Dimension(100, 50));
 			voteButtons[i].setFont(new Font("Serif", Font.BOLD, 15));
 			voteButtons[i].setBackground(Color.black);
-			voteButtons[i].setForeground(new Color(150, 0, 0));
+			voteButtons[i].setForeground(new Color(200, 0, 0));
 			add(voteButtons[i]);
 			voteButtons[i].addActionListener(e -> voteActionListener(voteButtons[ii], ii));
 
@@ -62,7 +62,7 @@ public class VotePanel extends JPanel {
 			cancelButtons[i].setPreferredSize(new Dimension(100, 50));
 			cancelButtons[i].setFont(new Font("Serif", Font.BOLD, 15));
 			cancelButtons[i].setBackground(Color.black);
-			cancelButtons[i].setForeground(new Color(150, 0, 0));
+			cancelButtons[i].setForeground(new Color(200, 0, 0));
 			add(cancelButtons[i]);
 			cancelButtons[i].addActionListener(e -> cancelActionListener(cancelButtons[ii], ii));
 		}
@@ -73,7 +73,7 @@ public class VotePanel extends JPanel {
 		completeButton.setEnabled(false);	//初期状態は無効
 		completeButton.setFont(new Font("Serif", Font.BOLD, 15));
 		completeButton.setBackground(Color.black);
-		completeButton.setForeground(new Color(150, 0, 0));
+		completeButton.setForeground(new Color(200, 0, 0));
 		add(completeButton);
 		completeButton.addActionListener(e -> completeActionListener(completeButton));
 	}

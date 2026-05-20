@@ -25,7 +25,7 @@ public class TimerPanel extends JPanel {
 	public TimerPanel() {
 		//タイマーのフォントサイズ変更
 		timeLabel.setFont(new Font("Serif", Font.BOLD, 50));
-		timeLabel.setForeground(new Color(150, 0, 0));
+		timeLabel.setForeground(new Color(200, 0, 0));
 		//タイマーの背景色変更
 		this.setBackground(Color.black);
 		//タイマーのラベルを画面に追加
