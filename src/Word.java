@@ -73,15 +73,18 @@ public class Word extends JPanel {
 
 	private void genreManager(int genreInt) {
 		if (od[genreInt].equals("食べ物")) {
-			String odai0[] = { "みかん", "ぽんかん" };
+			String odai0[] = { "みかん", "ぽんかん", "りんご","なし","うどん","そば","ラーメン","冷やし中華","スパゲティー","カルボナーラ",
+					"ぶどう","マスカット","チャーハン","エビピラフ","たこ焼き","お好み焼き","ハンバーグ","ステーキ","ラムネ","サイダー","ビール", "ワイン"};
 			String od0[] = {odai0[rand.nextInt(odai0.length / 2) * 2], odai0[rand.nextInt(odai0.length / 2) * 2 + 1]};
 			wordManager(od0);
-		} else if (od[genreInt].equals("施設")) {
-			String odai1[] = { "美術館", "博物館" };
+		} else if (od[genreInt].equals("施設・店")) {
+			String odai1[] = { "美術館", "博物館","学校","病院","遊園地","ゲームセンター","動物園", "水族館","温泉","サウナ","両国国技館","日本武道館",
+					"ドン・キホーテ","業務スーパー","マックスバリュー", "まいばすけっと","スターバックス","ドトール","ユニクロ","GU","羽田空港","成田空港",
+					"ディズニーランド", "サンリオピューロランド","ひらかたパーク", "ユニバーサルスタジオジャパン" };		
 			String od1[] = {odai1[rand.nextInt(odai1.length / 2) * 2], odai1[rand.nextInt(odai1.length / 2) * 2 + 1]};
 			wordManager(od1);
 		} else if (od[genreInt].equals("スポーツ")) {
-			String odai2[] = { "サッカー", "ハンドボール" };
+			String odai2[] = { "サッカー", "ハンドボール","野球","クリケット" };
 			String od2[] = {odai2[rand.nextInt(odai2.length / 2) * 2], odai2[rand.nextInt(odai2.length / 2) * 2 + 1]};
 			wordManager(od2);
 		} else if (od[genreInt].equals("日本の地名")) {
@@ -121,7 +124,7 @@ public class Word extends JPanel {
 			String od11[] = {odai11[rand.nextInt(odai11.length / 2) * 2], odai11[rand.nextInt(odai11.length / 2) * 2 + 1]};
 			wordManager(od11);
 		} else if (od[genreInt].equals("その他")) {
-			String odkai12[] = { "a", "b" };
+			String odai12[] = { "a", "b" };
 			String od12[] = {odai12[rand.nextInt(odai12.length / 2) * 2], odai12[rand.nextInt(odai12.length / 2) * 2 + 1]};
 			wordManager(od12);
 		}
