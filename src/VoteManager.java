@@ -1,3 +1,6 @@
+import java.awt.Color;
+import java.awt.Font;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -8,15 +11,21 @@ public class VoteManager extends JPanel{
 	int[] voteAmounts;
 	String[] playerNames;
 	JLabel label = new JLabel();
-	JButton Button = new JButton("結果を表示");
+	JButton button = new JButton("結果を表示");
 	static public int result;
 
 	public VoteManager() {
 		voteAmounts = VotePanel.voteAmounts;
 		playerNames = User.playerNames;
+		label.setFont(new Font("Serif", Font.BOLD, 15));
+		label.setBackground(Color.black);
+		label.setForeground(new Color(200, 0, 0));
 		add(label);
-		add(Button);
-		Button.addActionListener(e -> resultActionListener());
+		button.setFont(new Font("Serif", Font.BOLD, 15));
+		button.setBackground(Color.black);
+		button.setForeground(new Color(200, 0, 0));
+		add(button);
+		button.addActionListener(e -> resultActionListener());
 		voteResult();
 	}
 

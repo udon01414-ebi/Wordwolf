@@ -1,3 +1,6 @@
+import java.awt.Color;
+import java.awt.Font;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -11,9 +14,15 @@ public class ResultPanel extends JPanel{
 	
 	public ResultPanel() {
 		result = VoteManager.result;
+		label.setFont(new Font("Serif", Font.BOLD, 15));
+		label.setBackground(Color.black);
+		label.setForeground(new Color(200, 0, 0));
 		add(label);
 		if (result == Word.wolfPlayer) {
 			label.setText(User.playerNames[result] + "は、ウルフでした！市民の勝ち...？");
+			button.setFont(new Font("Serif", Font.BOLD, 15));
+			button.setBackground(Color.black);
+			button.setForeground(new Color(200, 0, 0));
 			add(button);
 			button.addActionListener(e -> ActionListener());
 		} else {
