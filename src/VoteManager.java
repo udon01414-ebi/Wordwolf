@@ -12,9 +12,13 @@ public class VoteManager extends JPanel{
 	String[] playerNames;
 	JLabel label = new JLabel();
 	JButton button = new JButton("結果を表示");
-	static public int result;
+	static public int[] result = new int[10];
+	static public int resultLength = 1;
 
 	public VoteManager() {
+		for (int i = 0; i < 10; i++) {
+			result[i] = 0;
+		}
 		voteAmounts = VotePanel.voteAmounts;
 		playerNames = User.playerNames;
 		label.setFont(new Font("Serif", Font.BOLD, 15));
@@ -57,8 +61,17 @@ public class VoteManager extends JPanel{
 			if (max == voteAmounts[i]) {
 				if (resultString == "") {
 					resultString = playerNames[i];
+					result[0] = i;
 				} else {
 					resultString = resultString + "と" + playerNames[i];
+					int a = 0;
+					for (int j = 0; j < 10; j++) {
+						if (result[j] == 0) {
+							a = j;
+						}
+					}
+					result[a] = i;
+					resultLength++;
 				}
 			}
 		}

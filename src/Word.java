@@ -21,51 +21,49 @@ public class Word extends JPanel {
 	static public String odai;
 
 	public Word() {
-		while (true) {
-			String input = JOptionPane.showInputDialog("<html>お題のジャンルを選択します。この中から選んでください。<br>"
-					+ "0:食べ物、1:施設、2:スポーツ、3:日本の地名<br>"
-					+ "4:世界の国、5:動物、6:人物、7:ゲーム<br>"
-					+ "8:漫画・アニメ、9:キャラクター、10:職業<br>"
-					+ "11:IT用語、12その他");
+		String input = JOptionPane.showInputDialog("<html>お題のジャンルを選択します。この中から選んでください。<br>"
+				+ "0:食べ物、1:施設、2:スポーツ、3:日本の地名<br>"
+				+ "4:世界の国、5:動物、6:人物、7:ゲーム<br>"
+				+ "8:漫画・アニメ、9:キャラクター、10:職業<br>"
+				+ "11:IT用語、12その他");
 
-			while (true) {
-				if (input == null) {
-					JOptionPane.showMessageDialog(null, "さようなら( ;∀;)また来てね！");
+		while (true) {
+			if (input == null) {
+				JOptionPane.showMessageDialog(null, "さようなら( ;∀;)また来てね！");
+				return;
+			}
+
+			if (input.isEmpty()) {
+				JOptionPane.showMessageDialog(null, "数字を入力してください");
+				continue;
+			}
+
+			try {
+				int count = Integer.parseInt(input);
+
+				if (count < 0 || count > 13) {
+					JOptionPane.showMessageDialog(null, "０～１２で入力をお願いします");
+				} else {
+					genreCheck(count);
+
+					JOptionPane.showMessageDialog(null,
+							"ゲームを開始しますか？（議論時間は" + TimerPanel.timeM + "分" + TimerPanel.timeS + "秒" + "です。）");
+
+					TimerPanel timerPanel = new TimerPanel();
+					JFrame frame = new JFrame("ワードウルフ");
+					timerPanel.setBorder(new EmptyBorder(50, 0, 50, 0));
+					frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					frame.setSize(480, 240);
+					frame.add(timerPanel);
+					frame.setLocationRelativeTo(null);
+					frame.setVisible(true);
+
 					return;
 				}
 
-				if (input.isEmpty()) {
-					JOptionPane.showMessageDialog(null, "数字を入力してください");
-					continue;
-				}
-
-				try {
-					int count = Integer.parseInt(input);
-
-					if (count < 0 || count > 13) {
-						JOptionPane.showMessageDialog(null, "０～１２で入力をお願いします");
-					} else {
-						genreCheck(count);
-
-						JOptionPane.showMessageDialog(null,
-								"ゲームを開始しますか？（議論時間は" + TimerPanel.timeM + "分" + TimerPanel.timeS + "秒" + "です。）");
-
-						TimerPanel timerPanel = new TimerPanel();
-						JFrame frame = new JFrame("ワードウルフ");
-						timerPanel.setBorder(new EmptyBorder(50, 0, 50, 0));
-						frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-						frame.setSize(480, 240);
-						frame.add(timerPanel);
-						frame.setLocationRelativeTo(null);
-						frame.setVisible(true);
-
-						return;
-					}
-
-				} catch (NumberFormatException e) {
-					JOptionPane.showMessageDialog(null, "数字を入力してください");
-					continue;
-				}
+			} catch (NumberFormatException e) {
+				JOptionPane.showMessageDialog(null, "数字を入力してください");
+				continue;
 			}
 		}
 	}
