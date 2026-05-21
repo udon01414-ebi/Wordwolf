@@ -86,22 +86,29 @@ public class Word extends JPanel {
 			String od1[] = {odai1[a], odai1[a + 1]};
 			wordManager(od1);
 		} else if (od[genreInt].equals("スポーツ")) {
-			String odai2[] = { "サッカー", "ハンドボール","野球","クリケット" };
+			String odai2[] = { "サッカー", "ハンドボール","野球","クリケット","卓球","テニス","バトミントン","ピックルボール","バレーボール","ビーチバレー",
+					"ゴルフ", "ビリヤード","ハンドボール", "水球","スケルトン", "ボブスレー","スキー","スノーボード","プロレス", "ボクシング",
+					"ホッケー","アイスホッケー","柔道","レスリング","ラグビー","アメリカンフットボール","フェンシング","剣道","フルマラソン","ハーフマラソン",
+					"駅伝","リレー","フィギュアスケート","新体操","ダーツ","アーチェリー","スピードスケート","ショートトラック","カーリング", "ボッチャ",
+					"競輪", "オートレース","カーレース","F1"};
 			int a = rand.nextInt(odai2.length / 2) * 2;
 			String od2[] = {odai2[a], odai2[a + 1]};
 			wordManager(od2);
 		} else if (od[genreInt].equals("日本の地名")) {
-			String odai3[] = { "新宿", "渋谷" };
+			String odai3[] = { "新宿", "渋谷","池袋","新宿","原宿","新大久保","錦糸町","押上","亀戸","平井","小岩","新小岩","葛西", "西葛西","北千住","南千住",
+					"清澄白河","門前仲町","上野","日暮里","立川","八王子","町田","相模原","横浜","川崎","大宮","浦和","川越","越谷","浦安","市川","船橋","木更津"};
 			int a = rand.nextInt(odai3.length / 2) * 2;
 			String od3[] = {odai3[a], odai3[a + 1]};
 			wordManager(od3);
 		} else if (od[genreInt].equals("世界の国")) {
-			String odai4[] = { "フランス", "イタリア" };
+			String odai4[] = { "フランス", "イタリア","ドイツ","ベルギー","スペイン","ポルトガル","フィンランド","スウェーデン","イギリス","アイルランド",
+					"オランダ","ポーランド","アメリカ","カナダ","ブラジル","アルゼンチン","ベネズエラ","コロンビア","オーストラリア","ニュージーランド"};
 			int a = rand.nextInt(odai4.length / 2) * 2;
 			String od4[] = {odai4[a], odai4[a + 1]};
 			wordManager(od4);
 		} else if (od[genreInt].equals("動物")) {
-			String odai5[] = { "タイガー", "ジャガー" };
+			String odai5[] = { "タイガー(トラ)", "ジャガー","ヒョウ","チーター","パンダ","コアラ","イルカ","シャチ","ペンギン","アザラシ","うさぎ","ハムスター","キリン","ゾウ",
+					"サル","ゴリラ","オオカミ","キツネ","カラス","ハト","タコ","イカ"};
 			int a = rand.nextInt(odai5.length / 2) * 2;
 			String od5[] = {odai5[a * 2], odai5[a + 1]};
 			wordManager(od5);
@@ -111,7 +118,9 @@ public class Word extends JPanel {
 			String od6[] = {odai6[a], odai6[a + 1]};
 			wordManager(od6);
 		} else if (od[genreInt].equals("ゲーム")) {
-			String odai7[] = { "メガドライブ", "セガサターン" };
+			String odai7[] = { "メガドライブ", "セガサターン","プレイステーション","XBOX","ファミコン","スーパーファミコン","ゲームボーイ","ゲームボーイアドバンス",
+					"ニンテンドーDS","ニンテンドー3DS","Wii","WiiU","マリオカート","ソニックレーシング","グランツーリスモ","リッジレーサー","マリオパーティ","桃太郎電鉄",
+					"将棋","チェス","オセロ","囲碁"};
 			int a = rand.nextInt(odai7.length / 2) * 2;
 			String od7[] = {odai7[a], odai7[a + 1]};
 			wordManager(od7);
@@ -126,12 +135,13 @@ public class Word extends JPanel {
 			String od9[] = {odai9[a], odai9[a + 1]};
 			wordManager(od9);
 		} else if (od[genreInt].equals("職業")) {
-			String odai10[] = { "プログラマー", "システムエンジニア" };
+			String odai10[] = { "プログラマー", "システムエンジニア","アプリケーションエンジニア","インフラエンジニア","医者","看護師","警察官","消防士","教師","保育士",
+					"歌手","声優","DJ","音楽プロデューサー","専門学生","大学生"};
 			int a = rand.nextInt(odai10.length / 2) * 2;
 			String od10[] = {odai10[a], odai10[a + 1]};
 			wordManager(od10);
 		} else if (od[genreInt].equals("IT用語")) {
-			String odai11[] = { "ウォーターフォールモデル", "スパイラルモデル" };
+			String odai11[] = { "ウォーターフォールモデル", "スパイラルモデル","ホワイトボックステスト","ブラックボックステスト","スタブ","ドライバ","クロスサイトスクリプティング","ソーシャルエンジニアリング" };
 			int a = rand.nextInt(odai11.length / 2) * 2;
 			String od11[] = {odai11[a], odai11[a + 1]};
 			wordManager(od11);
