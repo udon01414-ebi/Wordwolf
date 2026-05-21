@@ -15,7 +15,7 @@ public class VotePanel extends JPanel {
 	JButton[] cancelButtons = new JButton[10];	//取消ボタン
 	JButton completeButton = new JButton("完了");		//完了ボタン
 	JLabel[] playerLabels = new JLabel[10];		//プレイヤー名前のラベル
-	int voteAmounts[] = new int[10];		//投票数管理
+	static public int voteAmounts[] = new int[10];		//投票数管理
 	JLabel[] voteAmountLabels = new JLabel[10];	//投票数のラベル
 
 	//コンストラクタ
@@ -117,17 +117,17 @@ public class VotePanel extends JPanel {
 
 	//完了ボタンが押されたら
 	private void completeActionListener(JButton completeButton) {
-		//次のパネルのインスタンス化
-		TestNextPanel testNextPanel = new TestNextPanel();
+		//投票結果パネルのインスタンス化
+		VoteManager voteManager = new VoteManager();
 		//このパネルの親を取得
 		JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(VotePanel.this);
 		//フレームに乗ってるものをすべて削除
 		frame.getContentPane().removeAll();
-		//次のパネルを追加
-		frame.add(testNextPanel);
+		//投票結果パネルを追加
+		frame.add(voteManager);
 		//レイアウトの指定と計算
 		frame.revalidate();
-		frame.setSize(500, 500);
+		frame.pack();
 		frame.setLocationRelativeTo(null);
 		frame.repaint();
 	}

@@ -1,89 +1,60 @@
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
+public class VoteManager extends JPanel{
+	int[] voteAmounts;
+	String[] playerNames;
+	JLabel label = new JLabel();
+	JButton Button = new JButton("結果を表示");
+	static public int result;
 
-public class VoteManager {
+	public VoteManager() {
+		voteAmounts = VotePanel.voteAmounts;
+		playerNames = User.playerNames;
+		add(label);
+		add(Button);
+		Button.addActionListener(e -> resultActionListener());
+		voteResult();
+	}
 
-    int playerCount;
-    int wolfIndex;
-    String[] playerNames;
+	private void resultActionListener() {
+		//勝敗結果パネルのインスタンス化
+		ResultPanel resultPanel = new ResultPanel();
+		//このパネルの親を取得
+		JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(VoteManager.this);
+		//フレームに乗ってるものをすべて削除
+		frame.getContentPane().removeAll();
+		//勝敗結果パネルを追加
+		frame.add(resultPanel);
+		//レイアウトの指定と計算
+		frame.revalidate();
+		frame.pack();
+		frame.setLocationRelativeTo(null);
+		frame.repaint();
+	}
 
-    int[] votes;
-    int currentVote = 0;
-
-    JLabel label;
-    JTextField input;
-    JButton button;
-
-    public VoteManager(int playerCount, int wolfIndex, String[] playerNames,
-                       JLabel label, JTextField input, JButton button) {
-
-        this.playerCount = playerCount;
-        this.wolfIndex = wolfIndex;
-        this.playerNames = playerNames;
-
-        this.label = label;
-        this.input = input;
-        this.button = button;
-
-        votes = new int[playerCount];
-    }
-	
-	public void strartVote() {
-		label.setText(playerNames[0]+"の番：誰が怪しい？");
-		input.setText("");
-		input.setVisible(true);
-		button.setEnabled(true);
+	private void voteResult() {
+		String resultString = "";
+		int max = 0;
+		for (int i = 0; i < voteAmounts.length; i++) {
+			if (voteAmounts[i] > max) {
+				max = voteAmounts[i];
+			}
+		}
+		for (int i = 0; i < voteAmounts.length; i++) {
+			if (max == voteAmounts[i]) {
+				if (resultString == "") {
+					resultString = playerNames[i];
+				} else {
+					resultString = resultString + "と" + playerNames[i];
+				}
+			}
+		}
+		label.setText("最も票を集めたのは" + resultString + "でした。");
 		
-		   button.addActionListener(new ActionListener() {
-	            public void actionPerformed(ActionEvent e) {
-	                handleVote();
-	            }
-	        });
-	    }
-
-	 
-	    public void handleVote() {
-	    	try {
-	    		int v = Integer.parseInt(input.getText());
-	    		votes[v - 1]++;
-	    	}catch(Exception e) {
-	    		label.setText("正しい番号を入力してください");
-	    		return;
-	    	}
-	    	
-	    	currentVote++;
-	    	
-	    	if(currentVote<playerCount) {
-	    		label.setText(playerNames[currentVote]+"の番；投票してください");
-	    		input.setText("");
-	    		
-	    	} else {
-	            showResult();
-	        }
-	    }
-	    public void showResult() {
-	    	int max = 0;
-	    	int result =0;
-	    	
-	    	for(int i= 0; i<playerCount; i++) {
-	    		if(votes[i]> max) {
-	    			max = votes[i];
-	    			result = i;
-	    		}
-	    	}
-	    	if(result == wolfIndex) {
-	    		label.setText(playerNames[result]+"は、ウルフでした！市民の勝ち！！");
-	    	}else {
-	    		label.setText(playerNames[result]+"は違った…ウルフの勝ち！！");
-	    	}
-	    	
-	    	input.setVisible(false);
-	    	button.setEnabled(false);
-	    }
+	}
 
 }
